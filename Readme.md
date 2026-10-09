@@ -1,7 +1,8 @@
 # Личный проект «Седона»
 
 * Студент: [Валерия Никитина](https://up.htmlacademy.ru/htmlcss-individual/3/user/2709485).
-* Наставник: `Неизвестно`.
+* Наставник: [Ирина Антипина](https://htmlacademy.ru/profile/id2108789).
+* Сайт: [Сайт Седона(проект)](https://valeriia1703.github.io/2709485-sedona-3/).
 
 ---
 
