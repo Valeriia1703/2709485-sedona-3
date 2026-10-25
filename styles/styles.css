@@ -53,6 +53,10 @@ body {
 
 .user-navigation-subtext {
   background-color: #7DB54F;
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 10px;
+
 }
 
 /* оформление кнопок */
@@ -61,6 +65,7 @@ body {
   color: #ffffff;
   font-weight: 700;
   border: none;
+  text-align: center;
 }
 
 .big-button {
@@ -218,6 +223,22 @@ text-align: center;
 
 .select-control{
   color: inherit;
+}
+
+.cards-view-card::before {
+  content: url(../images/icons/cards.svg);
+}
+
+.cards-view-big-card::before {
+  content: url(../images/icons/big-cards.svg);
+}
+
+.cards-view-list::before {
+  content: url(../images/icons/list.svg);
+}
+
+.hotels-item {
+  border: 1px solid #E5E5E5;
 }
 
 .hotels-item-link {
