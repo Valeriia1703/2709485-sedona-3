@@ -29,9 +29,6 @@ body {
   font-weight: 400;
   font-style: normal;
   margin: 0;
-  /* для проверки высоты, потом убрать */
-  outline: 5px solid #7db54f;
-  outline-offset: -5px;
 }
 
 .page-container {
@@ -60,14 +57,18 @@ body {
 }
 
 .navigation-list {
+  display: flex;
   margin: 0;
   padding: 0;
   max-width: 440px;
+  list-style-type: none;
+  flex-wrap: wrap;
 }
 
 .user-navigation-list {
   max-width: 300px;
   margin-left: auto;
+  align-items: center;
 }
 
 .page-header-logo-link {
@@ -81,10 +82,24 @@ body {
   font-weight: 700;
   color: inherit;
   text-decoration: none;
+  padding: 20px 16px;
+  display: block;
 }
 
 .navigation-link-user {
   text-decoration: none;
+  display: block;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.navigation-link-user:not(.button) {
+  padding: 22px 12px;
+}
+
+.navigation-link-user.button {
+  padding: 8px 34px;
+  margin-left: 20px;
 }
 
 .user-navigation-subtext {
@@ -102,6 +117,7 @@ body {
   font-weight: 700;
   border: none;
   text-align: center;
+  border-radius: 4px;
 }
 
 .big-size-button {
@@ -132,7 +148,9 @@ body {
   background-image: url("../images/icons/image-detail.svg"), url("../images/backgrounds/index-background.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto, cover;
-  background-position: bottom, center center;
+  background-position: bottom, center;
+  padding-top: 51px;
+  padding-bottom: 80px;
 }
 .hero-image {
   margin: 0 auto;
@@ -151,11 +169,13 @@ body {
   text-align: center;
   width: 700px;
   margin: 0 auto;
+  margin-bottom: 25px;
 }
 
 .hero-subtext {
   width: 700px;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 .subtext {
@@ -163,27 +183,39 @@ body {
   line-height: 26px;
   text-align: center
 }
+.sedona-advantages {
+  padding-top: 80px;
+}
+
+/* Уточнить про использование гридов */
 
 .sedona-advantages-list {
-  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-areas:
+  display: flex;
+  flex-wrap: wrap;
+  /* grid-template-areas:
     "first first first"
     "second third fourth"
     "fifth fifth fifth";
   grid-template-columns: repeat(3, 400px);
-  grid-template-rows: repeat(3, 385px);
+  grid-template-rows: repeat(3, auto); */
+}
+
+.sedona-advantages-item:not(:first-child, :last-child) {
+    padding: 112px 85px;
+    flex-basis: 400px;
+    flex-grow: 1;
 }
 
 .sedona-advantages-first {
-  grid-area: first;
+  /* grid-area: first; */
   display: flex;
   flex-direction: row-reverse;
 }
 
-.sedona-advantages-second {
+/* .sedona-advantages-second {
   grid-area: second;
 }
 
@@ -193,20 +225,28 @@ body {
 
 .sedona-advantages-fourth {
   grid-area: fourth;
-}
+} */
 
 .sedona-advantages-fifth {
-  grid-area: fifth;
+  /* grid-area: fifth; */
   display: flex;
 }
 
-.sedona-advantages-title, .services-list-title {
+.sedona-advantages-text-container {
+  align-self: center;
+  margin: 0 85px;
+}
+
+.sedona-advantages-title {
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
   font-weight: 700;
   color: #000000;
   text-align: center;
+  margin: 0 auto;
+  width: 175px;
+  margin-bottom: 62px;
 }
 
 .sedona-advantages-item:first-child .sedona-advantages-title,
@@ -229,29 +269,49 @@ body {
 
 .sedona-advantages-description, .services-item-text {
   text-align: center;
+  margin: 0;
+}
+
+.services {
+  padding-top: 64px;
+}
+
+.services-list-title {
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 .services-text {
   width: 515px;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .services-subtext {
    width: 515px;
    margin: 0 auto;
+   margin-bottom: 64px;
 }
 
 .services-list {
   display: flex;
-  list-style: none;
+  list-style-type: none;
   padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
 .services-item {
   width: 400px;
-  height: 350px;
   align-content: center;
+  padding: 81px 85px;
 }
 
 .services-item:first-child::before{
@@ -260,6 +320,7 @@ body {
   height: 72px;
   display: block;
   margin: auto;
+  margin-bottom: 30px;
 
 }
 .services-item:nth-child(2)::before{
@@ -268,6 +329,7 @@ body {
   height: 72px;
   display: block;
   margin: auto;
+  margin-bottom: 30px;
 }
 
 .services-item:last-child::before{
@@ -276,6 +338,12 @@ body {
   height: 72px;
   display: block;
   margin: auto;
+  margin-bottom: 30px;
+}
+
+.subscription-index, .subscription {
+  padding-top: 96px;
+  padding-bottom: 104px;
 }
 
 .subscription .subscription-title {
@@ -286,7 +354,7 @@ body {
   background-color: #5b5b5b;
   background-image: url("../images/backgrounds/background-subscribe.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   background-position: top;
   color: #ffffff
 }
@@ -299,6 +367,7 @@ body {
   text-align: center;
   width: 500px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .subscription-subtext {
@@ -309,6 +378,7 @@ body {
 .subscription-form {
   display: flex;
   justify-content: center;
+  margin-top: 54px;
 }
 
 .subscription-form-input {
@@ -326,9 +396,14 @@ body {
   text-align: center;
 }
 
+.hotel-search {
+  padding: 96px 0;
+}
+
 .hotel-search-text {
   width: 600px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 .hotel-search-subtext {
   width: 600px;
@@ -338,6 +413,8 @@ body {
 .hotel-search-button {
   width: 376px;
   margin: 0 auto;
+  margin-top: 54px;
+  padding: 8px 50px;
 }
 
 .hotels-catalog {
@@ -346,6 +423,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
+  padding: 35px 0 67px;
 }
 
 .inner-hotels-header {
@@ -357,18 +435,21 @@ body {
   font-size: 60px;
   font-weight: 700;
   line-height: 78px;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .breadcrumbs {
   display: flex;
-  gap: 10px;
-  list-style: none;
+  list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 .breadcrumbs-item-link {
   font-size: 16px;
   color: inherit;
   text-decoration: none;
+  margin-right: 28px;
 }
 
 .breadcrumbs-home-link::before {
@@ -383,7 +464,7 @@ body {
 }
 
 .catalog-filters-list {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
@@ -421,18 +502,28 @@ body {
 .founded-hotels {
   width: 1060px;
   margin: 0 auto;
+  padding: 50px 0 60px;
 }
 
 .sorting-container {
   display: flex;
+  margin-bottom: 40px;
 }
 
 .founded-hotels-text {
+  margin: 0;
   margin-right: auto;
 }
 
 .cards-order {
+  width: 48px;
+  height: 48px;
   text-decoration: none;
+  margin-right: 8px;
+}
+
+.cards-order:last-child {
+  margin-right: 0;
 }
 
 .cards-view-card::before {
@@ -445,6 +536,13 @@ body {
 
 .cards-view-list::before {
   content: url("../images/icons/list.svg");
+}
+
+.hotels-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 80px;
 }
 
 .hotels-item {
@@ -476,8 +574,11 @@ body {
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .pagination-item-link[aria-current="page"] {
@@ -489,13 +590,28 @@ body {
   color: #ffffff;
   font-weight: 700;
   text-decoration: none;
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 12px 0;
+  text-align: center;
+  border-radius: 4px;
 }
+
+.pagination-item-dots {
+  color: #000000;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
 
 /* Оформление футера */
 
 .page-footer {
   background-color: #ffffff;
   color: #000000;
+  padding: 40px 0 30px;
 }
 
 .page-footer-wrapper {
@@ -508,6 +624,11 @@ body {
 
 .page-footer-social-list {
   max-width: 200px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 .page-footer-phone-link {
   font-size: 40px;
@@ -526,6 +647,16 @@ body {
   content: url("../images/icons/footer-logo.svg");
   width: 115px;
   height: 33px;
+  display: block;
+}
+
+.page-footer-social-item {
+  margin-bottom: 5px;
+}
+
+.page-footer-social-link {
+  width: 48px;
+  height: 40px;
   display: block;
 }
 
